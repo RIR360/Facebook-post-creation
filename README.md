@@ -22,5 +22,5 @@ This project replicates the post creation functionality of Facebook. It focuses 
 No additional setup is required. Just ensure your browser supports modern JavaScript and open the project.
 
 ## License
-This project is licensed under the [MIT License](https://github.com/RIR360/Facebook-post-creation/blob/master/).
+This project is licensed under the [MIT License](https://github.com/RIR360/Facebook-post-creation/blob/master/LICENSE).
 
