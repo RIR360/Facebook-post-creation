@@ -1,0 +1,21 @@
+{
+  "name": "html-builder",
+  "version": "1.0.0",
+  "description": "builds raw html code for each page from ejs layouts",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./tailwind.css -o ./dist/styles/tailwind.css --watch"
+  },
+  "keywords": [
+    "html",
+    "ejs",
+    "layouts",
+    "express",
+    "rendering"
+  ],
+  "author": "Rejwan Islam (RIR360)",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}
