@@ -108,6 +108,78 @@
     
   </main>
 
+  <div id="create-post" class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
+    <div class="w-full h-full flex justify-center items-center">
+      <div class="create-post-box bg-white rounded-md shadow-xl">
+        <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
+          <div class="px-4"></div>
+          <div>
+            Create post
+          </div>
+          <button class="btn btn-gray circle" onclick="toggle('#create-post')">
+            <i class="fa fa-times"></i>
+          </button>
+        </h2>
+        <div class="flex gap-2 p-4">
+          <img class="rounded-full" src="./images/user-logo.png" alt="" height="38">
+          <div class="small">
+            <div class="mb-1"><a href="" class="link1 font-bold">Rejwan Islam Rizvy</a></div>
+            <button class="text-xs bg-gray-200 p-1 rounded-md">
+              <i class="fas fa-earth-americas"></i>
+              <strong>Public</strong>
+              <i class="fas fa-caret-down"></i>
+            </button>
+          </div>
+        </div>
+        <form action="" class="create-post-form">
+          <div class="pb-4 px-4 flex flex-col gap-2">
+            <textarea name="post" id="post" rows="3" class="w-full p-2 text-2xl" placeholder="What's on your mind, Rejwan?"></textarea>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+              <div class="flex-auto">
+                <button type="button">
+                  <img class="drop-shadow-md" src="./images/post-bg-icon.png" alt="" style="height: 2rem;">
+                </button>
+              </div>
+              <div class="">
+                <button type="button">
+                  <img src="./images/emoji-icon-gray.png" alt="" style="height: 1.5rem;">
+                </button>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3 border border-solid border-gray-300 p-3 rounded-md">
+              <div class="flex-auto">
+                <button class="font-bold text-gray-500">
+                  Add to your post
+                </button>
+              </div>
+              <div class="flex gap-1">
+                <button type="button" class="btn circle" title="Photo/video">
+                  <img src="./images/photo-icon.png" alt="" style="height: 1.3rem;">
+                </button>
+                <button type="button" class="btn circle" title="Photo/video">
+                  <img src="./images/tag-icon.png" alt="" style="height: 1.3rem;">
+                </button>
+                <button type="button" class="btn circle" title="Photo/video">
+                  <img src="./images/feeling.png" alt="" style="height: 1.3rem;">
+                </button>
+                <button type="button" class="btn circle" title="Photo/video">
+                  <img src="./images/location-dot-icon.png" alt="" style="height: 1.3rem;">
+                </button>
+                <button type="button" class="btn circle" title="Photo/video">
+                  <img src="./images/gif-icon.png" alt="" style="height: 1.3rem;">
+                </button>
+                <button type="button" class="btn circle">
+                  <i class="fas fa-ellipsis"></i>
+                </button>
+              </div>
+            </div>
+            <button type="button" class="w-full btn disabled font-bold py-1 px-4 rounded-lg">Next</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="./scripts/fontawesome.all.min.js"></script>
   <script src="./scripts/script.js"></script>
 
