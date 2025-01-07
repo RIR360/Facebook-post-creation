@@ -28,6 +28,34 @@
 
   </header>
 
+  <div class="py-3"></div>
+
+  <main class="content">
+
+    <div class="bg-white rounded-lg shadow py-3 px-4">
+      <div class="flex items-center gap-2 mb-3">
+        <img class="rounded-full" src="./images/user-logo.png" alt="" height="40">
+        <div class="bg-gray-100 text-gray-500 w-full p-2 px-4 rounded-full hover:bg-gray-200 active:bg-gray-300 cursor-pointer transition duration-150 ease-in-out" onclick="toggle('#create-post')">
+          What's on your mind, Rej?
+        </div>
+      </div>
+      <div class="w-full mt-3 mb-2 border border-solid border-slate-200"></div>
+      <div class="flex gap-1 small font-bold text-gray-500">
+        <button class="btn flex-1" onclick="toggle('#create-post')">
+          <img src="./images/live-icon.png" alt="" style="height: 1.5rem;">
+          Live video
+        </button>
+        <button class="btn flex-1" onclick="toggle('#create-post')">
+          <img src="./images/photo-icon.png" alt="" style="height: 1.5rem;">
+          Photo/video
+        </button>
+        <button class="btn flex-1" onclick="toggle('#create-post')">
+          <img src="./images/feeling.png" alt="" style="height: 1.5rem;">
+          Feeling/Activity
+        </button>
+      </div>
+    </div>
+
   <script src="./scripts/fontawesome.all.min.js"></script>
   <script src="./scripts/script.js"></script>
 
