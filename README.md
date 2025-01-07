@@ -1,6 +1,6 @@
-# Facebook Post Creation
+# Facebook Post Creation (Clone)
 
-A simple project that replicates the functionality of creating a Facebook post. This project is built using **HTML**, **CSS**, **Tailwind CSS**, and **Vanilla JavaScript**.
+This project replicates the post creation functionality of Facebook. It focuses on building an interactive and responsive UI for creating posts, offering a streamlined user experience. Built with HTML, CSS, Tailwind CSS, and Vanilla JavaScript, this project demonstrates how core post creation features can be implemented from scratch.
 
 ## Features
 - User-friendly interface for creating posts.
