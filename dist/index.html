@@ -30,8 +30,8 @@
 
   <div class="py-3"></div>
 
-  <main class="content">
-
+  <main id="post-container" class="content">
+    <!-- what's on your mind section -->
     <div class="bg-white rounded-lg shadow py-3 px-4">
       <div class="flex items-center gap-2 mb-3">
         <img class="rounded-full" src="./images/user-logo.png" alt="" height="40">
@@ -55,8 +55,8 @@
         </button>
       </div>
     </div>
-
-    <div class="bg-white rounded-lg shadow py-3 px-4">
+    <!-- single post demo -->
+    <div class="post bg-white rounded-lg shadow py-3 px-4">
       <div class="flex gap-2 mb-3">
         <img class="rounded-full" src="./images/user-logo.png" alt="" height="38">
         <div class="small">
@@ -84,10 +84,10 @@
       <div class="w-full mt-3 mb-1 border-td py-2 flex gap-1 items-center small">
         <img src="./images/like-icon-colored.png" alt="" style="height: 1.2rem;">
         <div>
-          <button class="link1">300</button>
+          <button class="link1">0</button>
         </div>
         <div class="ms-auto">
-          <button class="link1">1 Comment</button>
+          <button class="link1">0 Comment</button>
         </div>
       </div>
       <div class="flex gap-1 small font-bold text-gray-500">
@@ -105,10 +105,10 @@
         </button>
       </div>
     </div>
-    
   </main>
 
-  <div id="create-post" class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
+  <!-- create post popup -->
+  <div id="create-post" class="hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
     <div class="w-full h-full flex justify-center items-center">
       <div class="create-post-box bg-white rounded-md shadow-xl">
         <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
@@ -131,9 +131,12 @@
             </button>
           </div>
         </div>
-        <form action="" class="create-post-form">
+        <!-- create post form -->
+        <form action="#" class="create-post-form" onsubmit="return createPostFrom(this)">
           <div class="pb-4 px-4 flex flex-col gap-2">
-            <textarea name="post" id="post" rows="3" class="w-full p-2 text-2xl" placeholder="What's on your mind, Rejwan?"></textarea>
+            <!-- post text area -->
+            <textarea id="post-text" name="text" rows="3" class="w-full p-2 text-2xl resize-y" placeholder="What's on your mind, Rejwan?" onkeyup="validateText(this)" onchange="validateText(this)" required></textarea>
+            <!-- post background selection -->
             <div class="flex flex-col md:flex-row items-center justify-between gap-3">
               <div class="flex-auto">
                 <button type="button">
@@ -146,6 +149,7 @@
                 </button>
               </div>
             </div>
+            <!-- add to your post section -->
             <div class="flex flex-col md:flex-row items-center justify-between gap-3 border border-solid border-gray-300 p-3 rounded-md">
               <div class="flex-auto">
                 <button class="font-bold text-gray-500">
@@ -173,7 +177,8 @@
                 </button>
               </div>
             </div>
-            <button type="button" class="w-full btn disabled font-bold py-1 px-4 rounded-lg">Next</button>
+            <!-- submit create post -->
+            <button id="post-btn" type="submit" class="w-full btn disabled font-bold rounded-lg" disabled>Post</button>
           </div>
         </form>
       </div>
