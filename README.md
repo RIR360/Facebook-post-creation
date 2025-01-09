@@ -24,3 +24,5 @@ No additional setup is required. Just ensure your browser supports modern JavaSc
 ## License
 This project is licensed under the [MIT License](https://github.com/RIR360/Facebook-post-creation/blob/master/LICENSE).
 
+## Disclaimer
+This project is for learning purposes only and is not affiliated with, endorsed by, or a replacement for the official Facebook platform.
