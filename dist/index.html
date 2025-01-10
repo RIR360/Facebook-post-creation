@@ -108,7 +108,7 @@
   </main>
 
   <!-- create post popup -->
-  <div id="create-post" class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
+  <div id="create-post" class="hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
     <form action="#" class="create-post-form w-full h-full flex justify-center items-center" onsubmit="return createPostFrom(this)">
       <div id="create-post-box" class="create-post-box bg-white rounded-md shadow-2xl">
         <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
@@ -182,7 +182,59 @@
           </div>
         </div>
       </div>
-      
+      <div id="post-audience-box" class="hidden create-post-box bg-white rounded-md shadow-2xl">
+        <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
+          <button type="button" class="btn btn-gray circle" onclick="toggle('#create-post-box', '#post-audience-box')">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <div>
+            Post audience
+          </div>
+          <div class="px-4"></div>
+        </h2>
+        <div class="flex gap-2 p-4 overflow-auto" style="max-height: 400px;">
+          <div class="small">
+            <div class="mb-1"><a href="" class="link1 font-bold">Who can see your post?</a></div>
+            <div class="text-slate-500">
+              Your post will show up in Feed, on your profile and in search results.
+              <div class="py-2"></div>
+              <div>
+                Your default audience is set to <strong>Public</strong>, but you can change the audience of this specific post.
+              </div>
+            </div>
+            <div>
+              <div class="flex flex-col py-3">
+                <label for="public-radio" class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <img src="./images/public-audience-icon.png" alt="" height="60">
+                  <span>
+                    <strong>Public</strong> <br>
+                    <small class="text-slate-500">Anyone on or off Facebook</small>
+                  </span>
+                  <input class="ms-auto" type="radio" id="public-radio" name="audience">
+                </label>
+                <label for="friends-radio" class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <img src="./images/friends-audience-icon.png" alt="" height="60">
+                  <span>
+                    <strong>Friends</strong> <br>
+                    <small class="text-slate-500">Your friends on Facebook</small>
+                  </span>
+                  <input class="ms-auto" type="radio" id="friends-radio" name="audience">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div action="#" class="border-top">
+          <div class="flex items-center gap-2 p-3">
+            <input type="checkbox" id="default-audience-checkbox">
+            <label for="default-audience-checkbox" class="small font-bold text-gray-600">Set as default audience.</label>
+          </div>
+          <div class="pb-4 px-4 flex justify-end gap-2">
+            <button type="button" class="btn text-primary font-bold rounded-lg px-4" onclick="toggle('#create-post-box', '#post-audience-box')">Cancel</button>
+            <button type="button" class="btn btn-primary font-bold rounded-lg px-10" onclick="setAudience()">Done</button>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 
