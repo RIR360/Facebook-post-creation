@@ -10,6 +10,13 @@
   box-sizing: border-box;
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--primary);
+}
+
 .create-post-form textarea {
   padding: 0;
   font-family: inherit;
@@ -24,6 +31,10 @@
 
 .border-bottom {
   border-bottom: 1px solid #cecece;
+}
+
+.border-top {
+  border-top: 1px solid #cecece;
 }
 
 .border-td {
@@ -61,7 +72,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-radius: 0.5rem;
   border: none;
   outline: none;
