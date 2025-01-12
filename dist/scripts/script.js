@@ -2,6 +2,8 @@ const post_btn = document.querySelector('#post-btn');
 const post_con = document.querySelector('#post-container');
 const post_textarea = document.querySelector('#post-text');
 
+activeGroup('.bg-changer-icon');
+
 function validateText(textarea) {
 
     let value = textarea.value;
