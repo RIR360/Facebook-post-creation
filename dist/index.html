@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/fontawesome.all.min.css">
-  <link rel="stylesheet" href="./styles/tailwind.css">
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/tailwind.css">
   <title>Post On Facebook | RIR360</title>
 </head>
 
@@ -35,7 +35,7 @@
     <div class="bg-white rounded-lg shadow py-3 px-4">
       <div class="flex items-center gap-2 mb-3">
         <img class="rounded-full" src="./images/user-logo.png" alt="" height="40">
-        <div class="bg-gray-100 text-gray-500 w-full p-2 px-4 rounded-full hover:bg-gray-200 active:bg-gray-300 cursor-pointer transition duration-150 ease-in-out" onclick="toggle('#create-post')">
+        <div class="bg-gray-100 text-gray-500 w-full py-3 px-4 rounded-full hover:bg-gray-200 active:bg-gray-300 cursor-pointer transition duration-150 ease-in-out" onclick="toggle('#create-post')">
           What's on your mind, Rej?
         </div>
       </div>
@@ -108,7 +108,7 @@
   </main>
 
   <!-- create post popup -->
-  <div id="create-post" class="hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
+  <div id="create-post" class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
     <form action="#" class="create-post-form w-full h-full flex justify-center items-center" onsubmit="return createPostFrom(this)">
       <div id="create-post-box" class="create-post-box bg-white rounded-md shadow-2xl">
         <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
@@ -120,6 +120,7 @@
             <i class="fa fa-times"></i>
           </button>
         </h2>
+        <!-- username and profile -->
         <div class="flex gap-2 p-4">
           <img class="rounded-full" src="./images/user-logo.png" alt="" height="38">
           <div class="small">
@@ -137,11 +138,29 @@
             <!-- post text area -->
             <textarea id="post-text" name="text" rows="3" class="w-full p-2 text-2xl resize-none" placeholder="What's on your mind, Rejwan?" onkeyup="validateText(this)" onchange="validateText(this)" required></textarea>
             <!-- post background selection -->
-            <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3" style="height: 40px;">
               <div class="flex-auto">
-                <button type="button">
-                  <img class="drop-shadow-md" src="./images/post-bg-icon.png" alt="" style="height: 2rem;">
+                <button id="change-bg-btn" type="button" onclick="toggle('#change-bg-btn', '#chang-bg-options-btn')" class="">
+                  <img src="./images/post-bg-icon.png" alt="" style="height: 2rem; filter: drop-shadow(0 4px 3px rgba(0,0,0,0.1));">
                 </button>
+                <div id="chang-bg-options-btn" class="hidden flex-auto justify-between flex gap-2">
+                  <button type="button" class="post-bg-icon" onclick="toggle('#change-bg-btn', '#chang-bg-options-btn')">
+                    <img src="./images/icons/post-bg-back.png" alt="" height="36">
+                  </button>
+                  <button type="button" class="post-bg-icon bg-changer-icon blank active"></button>
+                  <button type="button" class="post-bg-icon bg-changer-icon black"></button>
+                  <button type="button" class="post-bg-icon bg-changer-icon purple"></button>
+                  <button type="button" class="post-bg-icon bg-changer-icon maroon"></button>
+                  <button type="button" class="post-bg-icon bg-changer-icon blue"></button>
+                  <button type="button" class="post-bg-icon bg-changer-icon green"></button>
+                  <button type="button" class="post-bg-icon bg-changer-icon yellow"></button>
+                  <button type="button" class="post-bg-icon bg-changer-icon">
+                    <img src="./images/icons/post-bg1.png" alt="">
+                  </button>
+                  <button type="button" class="post-bg-icon">
+                    <img src="./images/icons/post-bg-all.png" alt="">
+                  </button>
+                </div>
               </div>
               <div class="">
                 <button type="button">
