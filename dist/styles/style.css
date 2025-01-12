@@ -17,6 +17,48 @@ input[type="checkbox"] {
   accent-color: var(--primary);
 }
 
+.post-bg-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.post-bg-icon img {
+  height: 2.2rem;
+}
+
+.post-bg-icon.active {
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 10px #d4d4d4;
+}
+
+.post-bg-icon.black {
+  background: #000000;
+}
+.post-bg-icon.purple {
+  background: #6c5ce7;
+}
+.post-bg-icon.maroon {
+  background: #b91d47;
+}
+.post-bg-icon.red {
+  background: #ff3737;
+}
+.post-bg-icon.blue {
+  background: #34aadc;
+}
+.post-bg-icon.green {
+  background: #8bc34a;
+}
+.post-bg-icon.yellow {
+  background: #f7dc6f;
+}
+
 .create-post-form textarea {
   padding: 0;
   font-family: inherit;
@@ -79,7 +121,6 @@ input[type="checkbox"] {
   outline: none;
   cursor: pointer;
   font-size: inherit;
-  transition: all 0.2s ease;
   background: transparent;
 }
 
@@ -93,6 +134,7 @@ input[type="checkbox"] {
 
 .btn:active {
   background: rgb(230, 230, 230);
+  transform: scale(0.95);
 }
 
 .btn.btn-primary {
