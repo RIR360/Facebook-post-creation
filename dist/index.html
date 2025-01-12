@@ -182,6 +182,7 @@
           </div>
         </div>
       </div>
+      <!-- post audience box -->
       <div id="post-audience-box" class="hidden create-post-box bg-white rounded-md shadow-2xl">
         <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
           <button type="button" class="btn btn-gray circle" onclick="toggle('#create-post-box', '#post-audience-box')">
@@ -204,21 +205,59 @@
             </div>
             <div>
               <div class="flex flex-col py-3">
-                <label for="public-radio" class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <label for="public-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
                   <img src="./images/public-audience-icon.png" alt="" height="60">
                   <span>
                     <strong>Public</strong> <br>
                     <small class="text-slate-500">Anyone on or off Facebook</small>
                   </span>
-                  <input class="ms-auto" type="radio" id="public-radio" name="audience">
+                  <input class="ms-auto" type="radio" id="public-radio" name="audience" value="public">
                 </label>
-                <label for="friends-radio" class="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <label for="friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
                   <img src="./images/friends-audience-icon.png" alt="" height="60">
                   <span>
                     <strong>Friends</strong> <br>
                     <small class="text-slate-500">Your friends on Facebook</small>
                   </span>
-                  <input class="ms-auto" type="radio" id="friends-radio" name="audience">
+                  <input class="ms-auto" type="radio" id="friends-radio" name="audience" value="friends">
+                </label>
+                <label for="friends-except-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <img src="./images/friends-except-icon.png" alt="" height="60">
+                  <span>
+                    <strong>Friends except...</strong> <br>
+                    <small class="text-slate-500">Friends: Except: John Doe, Bob, Alice</small>
+                  </span>
+                  <input class="ms-auto" type="radio" id="friends-except-radio" name="audience" value="friends-except">
+                </label>
+                <label for="only-me-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <img src="./images/only-me-icon.png" alt="" height="60">
+                  <span>
+                    <strong>Only me</strong>
+                  </span>
+                  <input class="ms-auto" type="radio" id="only-me-radio" name="audience" value="only-me">
+                </label>
+                <label for="specific-friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <img src="./images/specific-audience-icon.png" alt="" height="60">
+                  <span>
+                    <strong>Specific friends</strong>
+                  </span>
+                  <input class="ms-auto" type="radio" id="specific-friends-radio" name="audience" value="specific-friends">
+                </label>
+                <label for="custom-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <img src="./images/custom-audience-icoin.png" alt="" height="60">
+                  <span>
+                    <strong>Custom</strong> <br>
+                    <small class="text-slate-500">Include and exclude friends and lists</small>
+                  </span>
+                  <input class="ms-auto" type="radio" id="custom-radio" name="audience" value="custom">
+                </label>
+                <label for="close-friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                  <img src="./images/close-friends-icon.png" alt="" height="60">
+                  <span>
+                    <strong>Close friends</strong> <br>
+                    <small class="text-slate-500">Your custom list</small>
+                  </span>
+                  <input class="ms-auto" type="radio" id="close-friends-radio" name="audience" value="close-friends">
                 </label>
               </div>
             </div>
