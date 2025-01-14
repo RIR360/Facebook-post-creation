@@ -111,7 +111,7 @@
   <div id="create-post" class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
     <form action="#" class="create-post-form w-full h-full flex justify-center items-center" onsubmit="return createPostFrom(this)">
       <!-- create post box -->
-      <div id="create-post-box" class="hidden create-post-box bg-white rounded-md shadow-2xl">
+      <div id="create-post-box" class="create-post-box bg-white rounded-md shadow-2xl">
         <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
           <div class="px-4"></div>
           <div>
@@ -291,7 +291,7 @@
         </div>
       </div>
       <!-- post check in -->
-      <div id="post-checkin-box" class="create-post-box bg-white rounded-md shadow-2xl">
+      <div id="post-checkin-box" class="hidden create-post-box bg-white rounded-md shadow-2xl">
         <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
           <button type="button" class="btn btn-gray circle" onclick="toggle('#create-post-box', '#post-checkin-box')">
             <i class="fa fa-arrow-left"></i>
