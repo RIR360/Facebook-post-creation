@@ -17,6 +17,12 @@ input[type="checkbox"] {
   accent-color: var(--primary);
 }
 
+.profile-img-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
 .post-bg-icon {
   width: 2.2rem;
   height: 2.2rem;
@@ -57,6 +63,15 @@ input[type="checkbox"] {
 }
 .post-bg-icon.yellow {
   background: #f7dc6f;
+}
+.post-bg-icon.blue-grad {
+  background: linear-gradient(45deg, #34aadc, #0861f2);
+}
+.post-bg-icon.green-grad {
+  background: linear-gradient(to bottom, #ecffd5, #c2ff7c);
+}
+.post-bg-icon.yellow-grad {
+  background: linear-gradient(90deg, #f7dc6f, #f2c94c);
 }
 
 .create-post-form textarea {
