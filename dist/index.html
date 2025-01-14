@@ -290,7 +290,37 @@
           </div>
         </div>
       </div>
-      
+      <!-- post check in -->
+      <div id="post-checkin-box" class="create-post-box bg-white rounded-md shadow-2xl">
+        <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
+          <button type="button" class="btn btn-gray circle" onclick="toggle('#create-post-box', '#post-checkin-box')">
+            <i class="fa fa-arrow-left"></i>
+          </button>
+          <div>
+            Search for location
+          </div>
+          <div class="px-4"></div>
+        </h2>
+        <div class="p-4">
+          <div class="bg-gray-100 text-gray-500 w-full py-3 px-4 rounded-full">
+            <i class="fa fa-search mr-1"></i>
+            <input type="text" class="bg-transparent outline-none" placeholder="where are you?">
+          </div>
+        </div>
+        <div class="flex gap-2 p-4 overflow-auto" style="max-height: 400px;">
+          
+        </div>
+        <div action="#" class="border-top">
+          <div class="flex items-center gap-2 p-3">
+            <input type="checkbox" id="default-audience-checkbox">
+            <label for="default-audience-checkbox" class="small font-bold text-gray-600">Set as default audience.</label>
+          </div>
+          <div class="pb-4 px-4 flex justify-end gap-2">
+            <button type="button" class="btn text-primary font-bold rounded-lg px-4" onclick="toggle('#create-post-box', '#post-audience-box')">Cancel</button>
+            <button type="button" class="btn btn-primary font-bold rounded-lg px-10" onclick="setAudience()">Done</button>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 
