@@ -14,16 +14,16 @@
   
   <header class="px-4 flex justify-between bg-white shadow-md sticky top-0 z-10">
 
-    <div class="pt-2">
-      <img class="rounded-full" src="./images/facebook-logo-circle.png" alt="" height="40">
+    <div class="py-2">
+      <img class="rounded-full" src="./images/facebook-logo-circle.png" alt="" width="40">
     </div>
 
     <div class="px-10 text-primary flex items-center border-b-primary clickable" title="Home">
       <i class="fa fa-home text-xl"></i>
     </div>
 
-    <div class="pt-2">
-      <img class="rounded-full" src="./images/user-logo.png" alt="" height="40">
+    <div class="py-2">
+      <img class="rounded-full" src="./images/user-logo.png" alt="" width="40">
     </div>
 
   </header>
@@ -34,7 +34,7 @@
     <!-- what's on your mind section -->
     <div class="bg-white rounded-lg shadow py-3 px-4">
       <div class="flex items-center gap-2 mb-3">
-        <img class="rounded-full" src="./images/user-logo.png" alt="" height="40">
+        <img class="rounded-full" src="./images/user-logo.png" alt="" width="45">
         <div class="bg-gray-100 text-gray-500 w-full py-3 px-4 rounded-full hover:bg-gray-200 active:bg-gray-300 cursor-pointer transition duration-150 ease-in-out" onclick="toggle('#create-post')">
           What's on your mind, Rej?
         </div>
@@ -58,7 +58,7 @@
     <!-- single post demo -->
     <div class="post bg-white rounded-lg shadow py-3 px-4">
       <div class="flex gap-2 mb-3">
-        <img class="rounded-full" src="./images/user-logo.png" alt="" height="38">
+        <img class="profile-img-circle" src="./images/user-logo.png" alt="">
         <div class="small">
           <div class="mb-1"><a href="" class="link1 font-bold">Rejwan Islam Rizvy</a></div>
           <span class="text-slate-400 flex items-center gap-1">
@@ -110,7 +110,8 @@
   <!-- create post popup -->
   <div id="create-post" class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-75 z-10">
     <form action="#" class="create-post-form w-full h-full flex justify-center items-center" onsubmit="return createPostFrom(this)">
-      <div id="create-post-box" class="create-post-box bg-white rounded-md shadow-2xl">
+      <!-- create post box -->
+      <div id="create-post-box" class="hidden create-post-box bg-white rounded-md shadow-2xl">
         <h2 class="text-xl font-bold text-center py-3 border-bottom flex items-center justify-between px-4">
           <div class="px-4"></div>
           <div>
@@ -122,7 +123,7 @@
         </h2>
         <!-- username and profile -->
         <div class="flex gap-2 p-4">
-          <img class="rounded-full" src="./images/user-logo.png" alt="" height="38">
+          <img class="profile-img-circle" src="./images/user-logo.png" alt="">
           <div class="small">
             <div class="mb-1"><a href="" class="link1 font-bold">Rejwan Islam Rizvy</a></div>
             <button type="button" class="text-xs bg-gray-200 p-1 rounded-md" onclick="toggle('#create-post-box', '#post-audience-box')">
@@ -133,72 +134,70 @@
           </div>
         </div>
         <!-- create post form -->
-        <div>
-          <div class="pb-4 px-4 flex flex-col gap-2">
-            <!-- post text area -->
-            <textarea id="post-text" name="text" rows="3" class="w-full p-2 text-2xl resize-none" placeholder="What's on your mind, Rejwan?" onkeyup="validateText(this)" onchange="validateText(this)" required></textarea>
-            <!-- post background selection -->
-            <div class="flex flex-col md:flex-row items-center justify-between gap-3" style="height: 40px;">
-              <div class="flex-auto">
-                <button id="change-bg-btn" type="button" onclick="toggle('#change-bg-btn', '#chang-bg-options-btn')" class="">
-                  <img src="./images/post-bg-icon.png" alt="" style="height: 2rem; filter: drop-shadow(0 4px 3px rgba(0,0,0,0.1));">
+        <div class="pb-4 px-4 flex flex-col gap-2">
+          <!-- post text area -->
+          <textarea id="post-text" name="text" rows="3" class="w-full p-2 text-2xl resize-none" placeholder="What's on your mind, Rejwan?" onkeyup="validateText(this)" onchange="validateText(this)" required></textarea>
+          <!-- post background selection -->
+          <div class="flex flex-col md:flex-row items-center justify-between gap-3" style="height: 40px;">
+            <div class="flex-auto">
+              <button id="change-bg-btn" type="button" onclick="toggle('#change-bg-btn', '#chang-bg-options-btn')" class="">
+                <img src="./images/post-bg-icon.png" alt="" style="height: 2rem; filter: drop-shadow(0 4px 3px rgba(0,0,0,0.1));">
+              </button>
+              <div id="chang-bg-options-btn" class="hidden flex-auto justify-between flex gap-2">
+                <button type="button" class="post-bg-icon" onclick="toggle('#change-bg-btn', '#chang-bg-options-btn')">
+                  <img src="./images/icons/post-bg-back.png" alt="" width="36">
                 </button>
-                <div id="chang-bg-options-btn" class="hidden flex-auto justify-between flex gap-2">
-                  <button type="button" class="post-bg-icon" onclick="toggle('#change-bg-btn', '#chang-bg-options-btn')">
-                    <img src="./images/icons/post-bg-back.png" alt="" height="36">
-                  </button>
-                  <button type="button" class="post-bg-icon bg-changer-icon blank active"></button>
-                  <button type="button" class="post-bg-icon bg-changer-icon black"></button>
-                  <button type="button" class="post-bg-icon bg-changer-icon purple"></button>
-                  <button type="button" class="post-bg-icon bg-changer-icon maroon"></button>
-                  <button type="button" class="post-bg-icon bg-changer-icon blue"></button>
-                  <button type="button" class="post-bg-icon bg-changer-icon green"></button>
-                  <button type="button" class="post-bg-icon bg-changer-icon yellow"></button>
-                  <button type="button" class="post-bg-icon bg-changer-icon">
-                    <img src="./images/icons/post-bg1.png" alt="">
-                  </button>
-                  <button type="button" class="post-bg-icon">
-                    <img src="./images/icons/post-bg-all.png" alt="">
-                  </button>
-                </div>
-              </div>
-              <div class="">
-                <button type="button">
-                  <img src="./images/emoji-icon-gray.png" alt="" style="height: 1.5rem;">
+                <button type="button" class="post-bg-icon bg-changer-icon blank active"></button>
+                <button type="button" class="post-bg-icon bg-changer-icon black"></button>
+                <button type="button" class="post-bg-icon bg-changer-icon purple"></button>
+                <button type="button" class="post-bg-icon bg-changer-icon maroon"></button>
+                <button type="button" class="post-bg-icon bg-changer-icon blue-grad"></button>
+                <button type="button" class="post-bg-icon bg-changer-icon green-grad"></button>
+                <button type="button" class="post-bg-icon bg-changer-icon yellow-grad"></button>
+                <button type="button" class="post-bg-icon bg-changer-icon">
+                  <img src="./images/icons/post-bg1.png" alt="">
+                </button>
+                <button type="button" class="post-bg-icon">
+                  <img src="./images/icons/post-bg-all.png" alt="">
                 </button>
               </div>
             </div>
-            <!-- add to your post section -->
-            <div class="flex flex-col md:flex-row items-center justify-between gap-3 border border-solid border-gray-300 p-3 rounded-md">
-              <div class="flex-auto">
-                <button class="font-bold text-gray-500">
-                  Add to your post
-                </button>
-              </div>
-              <div class="flex gap-1">
-                <button type="button" class="btn circle" title="Photo/video">
-                  <img src="./images/photo-icon.png" alt="" style="height: 1.3rem;">
-                </button>
-                <button type="button" class="btn circle" title="Photo/video">
-                  <img src="./images/tag-icon.png" alt="" style="height: 1.3rem;">
-                </button>
-                <button type="button" class="btn circle" title="Photo/video">
-                  <img src="./images/feeling.png" alt="" style="height: 1.3rem;">
-                </button>
-                <button type="button" class="btn circle" title="Photo/video">
-                  <img src="./images/location-dot-icon.png" alt="" style="height: 1.3rem;">
-                </button>
-                <button type="button" class="btn circle" title="Photo/video">
-                  <img src="./images/gif-icon.png" alt="" style="height: 1.3rem;">
-                </button>
-                <button type="button" class="btn circle">
-                  <i class="fas fa-ellipsis"></i>
-                </button>
-              </div>
+            <div class="">
+              <button type="button">
+                <img src="./images/emoji-icon-gray.png" alt="" style="height: 1.5rem;">
+              </button>
             </div>
-            <!-- submit create post -->
-            <button id="post-btn" type="submit" class="w-full btn disabled font-bold rounded-lg" disabled>Post</button>
           </div>
+          <!-- add to your post section -->
+          <div class="flex flex-col md:flex-row items-center justify-between gap-3 border border-solid border-gray-300 p-3 rounded-md">
+            <div class="flex-auto">
+              <button class="font-bold text-gray-500">
+                Add to your post
+              </button>
+            </div>
+            <div class="flex gap-1">
+              <button type="button" class="btn circle" title="Photo/video">
+                <img src="./images/photo-icon.png" alt="" style="height: 1.3rem;">
+              </button>
+              <button type="button" class="btn circle" title="Photo/video">
+                <img src="./images/tag-icon.png" alt="" style="height: 1.3rem;">
+              </button>
+              <button type="button" class="btn circle" title="Photo/video">
+                <img src="./images/feeling.png" alt="" style="height: 1.3rem;">
+              </button>
+              <button type="button" class="btn circle" title="Photo/video" onclick="toggle('#create-post-box', '#post-checkin-box')">
+                <img src="./images/location-dot-icon.png" alt="" style="height: 1.3rem;">
+              </button>
+              <button type="button" class="btn circle" title="Photo/video">
+                <img src="./images/gif-icon.png" alt="" style="height: 1.3rem;">
+              </button>
+              <button type="button" class="btn circle">
+                <i class="fas fa-ellipsis"></i>
+              </button>
+            </div>
+          </div>
+          <!-- submit create post -->
+          <button id="post-btn" type="submit" class="w-full btn disabled font-bold rounded-lg" disabled>Post</button>
         </div>
       </div>
       <!-- post audience box -->
@@ -212,73 +211,71 @@
           </div>
           <div class="px-4"></div>
         </h2>
-        <div class="flex gap-2 p-4 overflow-auto" style="max-height: 400px;">
-          <div class="small">
-            <div class="mb-1"><a href="" class="link1 font-bold">Who can see your post?</a></div>
-            <div class="text-slate-500">
-              Your post will show up in Feed, on your profile and in search results.
-              <div class="py-2"></div>
-              <div>
-                Your default audience is set to <strong>Public</strong>, but you can change the audience of this specific post.
-              </div>
-            </div>
+        <div class="small p-4 overflow-auto" style="max-height: 400px;">
+          <div class="mb-1 font-bold text-lg">Who can see your post?</div>
+          <div class="text-slate-500">
+            Your post will show up in Feed, on your profile and in search results.
+            <div class="py-2"></div>
             <div>
-              <div class="flex flex-col py-3">
-                <label for="public-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-                  <img src="./images/public-audience-icon.png" alt="" height="60">
-                  <span>
-                    <strong>Public</strong> <br>
-                    <small class="text-slate-500">Anyone on or off Facebook</small>
-                  </span>
-                  <input class="ms-auto" type="radio" id="public-radio" name="audience" value="public">
-                </label>
-                <label for="friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-                  <img src="./images/friends-audience-icon.png" alt="" height="60">
-                  <span>
-                    <strong>Friends</strong> <br>
-                    <small class="text-slate-500">Your friends on Facebook</small>
-                  </span>
-                  <input class="ms-auto" type="radio" id="friends-radio" name="audience" value="friends">
-                </label>
-                <label for="friends-except-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-                  <img src="./images/friends-except-icon.png" alt="" height="60">
-                  <span>
-                    <strong>Friends except...</strong> <br>
-                    <small class="text-slate-500">Friends: Except: John Doe, Bob, Alice</small>
-                  </span>
-                  <input class="ms-auto" type="radio" id="friends-except-radio" name="audience" value="friends-except">
-                </label>
-                <label for="only-me-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-                  <img src="./images/only-me-icon.png" alt="" height="60">
-                  <span>
-                    <strong>Only me</strong>
-                  </span>
-                  <input class="ms-auto" type="radio" id="only-me-radio" name="audience" value="only-me">
-                </label>
-                <label for="specific-friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-                  <img src="./images/specific-audience-icon.png" alt="" height="60">
-                  <span>
-                    <strong>Specific friends</strong>
-                  </span>
-                  <input class="ms-auto" type="radio" id="specific-friends-radio" name="audience" value="specific-friends">
-                </label>
-                <label for="custom-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-                  <img src="./images/custom-audience-icoin.png" alt="" height="60">
-                  <span>
-                    <strong>Custom</strong> <br>
-                    <small class="text-slate-500">Include and exclude friends and lists</small>
-                  </span>
-                  <input class="ms-auto" type="radio" id="custom-radio" name="audience" value="custom">
-                </label>
-                <label for="close-friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
-                  <img src="./images/close-friends-icon.png" alt="" height="60">
-                  <span>
-                    <strong>Close friends</strong> <br>
-                    <small class="text-slate-500">Your custom list</small>
-                  </span>
-                  <input class="ms-auto" type="radio" id="close-friends-radio" name="audience" value="close-friends">
-                </label>
-              </div>
+              Your default audience is set to <strong>Public</strong>, but you can change the audience of this specific post.
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col py-3">
+              <label for="public-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src="./images/public-audience-icon.png" alt="" width="60">
+                <span>
+                  <strong>Public</strong> <br>
+                  <small class="text-slate-500">Anyone on or off Facebook</small>
+                </span>
+                <input class="ms-auto" type="radio" id="public-radio" name="audience" value="public">
+              </label>
+              <label for="friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src="./images/friends-audience-icon.png" alt="" width="60">
+                <span>
+                  <strong>Friends</strong> <br>
+                  <small class="text-slate-500">Your friends on Facebook</small>
+                </span>
+                <input class="ms-auto" type="radio" id="friends-radio" name="audience" value="friends">
+              </label>
+              <label for="friends-except-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src="./images/friends-except-icon.png" alt="" width="60">
+                <span>
+                  <strong>Friends except...</strong> <br>
+                  <small class="text-slate-500">Friends: Except: John Doe, Bob, Alice</small>
+                </span>
+                <input class="ms-auto" type="radio" id="friends-except-radio" name="audience" value="friends-except">
+              </label>
+              <label for="only-me-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src="./images/only-me-icon.png" alt="" width="60">
+                <span>
+                  <strong>Only me</strong>
+                </span>
+                <input class="ms-auto" type="radio" id="only-me-radio" name="audience" value="only-me">
+              </label>
+              <label for="specific-friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src="./images/specific-audience-icon.png" alt="" width="60">
+                <span>
+                  <strong>Specific friends</strong>
+                </span>
+                <input class="ms-auto" type="radio" id="specific-friends-radio" name="audience" value="specific-friends">
+              </label>
+              <label for="custom-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src="./images/custom-audience-icoin.png" alt="" width="60">
+                <span>
+                  <strong>Custom</strong> <br>
+                  <small class="text-slate-500">Include and exclude friends and lists</small>
+                </span>
+                <input class="ms-auto" type="radio" id="custom-radio" name="audience" value="custom">
+              </label>
+              <label for="close-friends-radio" class="flex items-center gap-2 py-1 px-2 rounded-lg hover:bg-gray-100 cursor-pointer">
+                <img src="./images/close-friends-icon.png" alt="" width="60">
+                <span>
+                  <strong>Close friends</strong> <br>
+                  <small class="text-slate-500">Your custom list</small>
+                </span>
+                <input class="ms-auto" type="radio" id="close-friends-radio" name="audience" value="close-friends">
+              </label>
             </div>
           </div>
         </div>
@@ -293,6 +290,7 @@
           </div>
         </div>
       </div>
+      
     </form>
   </div>
 
