@@ -56,7 +56,7 @@ function renderPost(data) {
     return `
     <div class="post bg-white rounded-lg shadow py-3 px-4">
         <div class="flex gap-2 mb-3">
-          <img class="rounded-full" src="./images/user-logo.png" alt="" height="38">
+          <img class="profile-img-circle" src="./images/user-logo.png" alt="">
           <div class="small">
             <div class="mb-1"><a href="" class="link1 font-bold">Rejwan Islam Rizvy</a></div>
             <span class="text-slate-400 flex items-center gap-1">
